@@ -9,8 +9,8 @@ Install all the dependencies mentioned below:-
 `pip install google-generativeai`
 `#google generative library` 
   
-  `pip install flut`
- `#Flut for GUI` 
+  `pip install flet`
+ `#Flet for GUI` 
 
 `pip install pyttxs3`
  `#Speech to Text`
