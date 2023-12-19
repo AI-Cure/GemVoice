@@ -17,7 +17,7 @@ Install all the dependencies mentioned below:-
 
 
 ## How to Use?
-Just enter your own API key from [Google AI Dev]( ai.google.dev) and enter it and start using.
+Just enter your own API key from [Google AI Dev](https://ai.google.dev) and enter it and start using.
 
 # Future Improvements
 * Making it fully voice accesable
