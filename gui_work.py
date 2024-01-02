@@ -1,10 +1,42 @@
-import os
+import flet as ft 
 import google.generativeai as genai
 import pyttsx3
-import speech_recognition as sr
-import json
 
 
+
+
+class main:
+    def __init__(self,page: ft.Page):
+        self.page = page
+        
+        self.page.title = "Flet counter example"
+        self.page.vertical_alignment = ft.MainAxisAlignment.CENTER
+        
+        self.Voice = VoiceEngine()
+        self.Model = AImodel("AIzaSyDQRGF8n7nrdXCYRBy089w3EfpgIji1B2o")
+        
+        self.text_field = ft.TextField(label="Enter your question!")
+        self.submit = ft.ElevatedButton(text="Submit", on_click=self.processInput)
+        
+        self.page.add(self.text_field,self.submit)
+
+    def processInput(self,e):
+        self.question = self.text_field.value
+        self.text_field.value = ""
+        self.page.update()
+        response = self.Model.generateOutput(question=self.question)
+        print(response)
+        response = response.replace("*","")
+        self.Voice.speak(response)
+        self.Voice = None
+        self.Voice = VoiceEngine()
+        
+
+        
+        
+        
+        
+        
 class VoiceEngine:
     def __init__(self):
         self.engine = pyttsx3.init()
@@ -12,10 +44,17 @@ class VoiceEngine:
         self.engine.setProperty('rate',180)
         self.engine.setProperty('voice',self.voices[0].id)
     
+
+    
     def speak(self,Text:str):
+        if self.engine._inLoop:
+            self.engine.endLoop()
         self.engine.say(Text)
         self.engine.runAndWait()
-
+        self.engine.endLoop()
+        if self.engine._inLoop:
+            self.engine.endLoop()
+            
 class AImodel:
     def __init__(self,api_key):
         self.api_key = api_key
@@ -27,7 +66,7 @@ class AImodel:
         "temperature": 0.9,
         "top_p": 1,
         "top_k": 1,
-        "max_output_tokens": 2048,
+        "max_output_tokens": 512,
         }
 
         self.safety_settings = [
@@ -60,49 +99,4 @@ class AImodel:
         return self.response.text
 
 
-Model = AImodel("AIzaSyDQRGF8n7nrdXCYRBy089w3EfpgIji1B2o")
-Voice = VoiceEngine()
-
-def takeCommandEnglish(): 
-         
-    r = sr.Recognizer() 
-    with sr.Microphone() as source: 
-        r.adjust_for_ambient_noise(source=source)          
-        # seconds of non-speaking audio before  
-        # a phrase is considered complete 
-        print('Listening') 
-        audio = r.listen(source)   
-        try: 
-            print("Recognizing") 
-            Query = r.recognize_vosk(audio_data=audio,language='en')
-            Query = json.loads(Query)
-            # for listening the command in indian english 
-            Query = Query['text']            
-            
-            if Query == "":
-                return None
-            
-            print(f"{Query}")
-            return Query 
-
-        # handling the exception, so that assistant can  
-        # ask for telling again the command 
-        except Exception as e: 
-            print(e)   
-            return "Can you Please Say that Again?" 
-  
-
-while True:
-    question = takeCommandEnglish()
-
-    
-
-    if question == None:
-        print("No response from Mic")
-    else:
-        response = Model.generateOutput(question=question)
-        print(response)
-        response = response.replace("*","")
-        Voice.speak(response)
-
-
+ft.app(target=main)
