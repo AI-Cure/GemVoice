@@ -90,7 +90,7 @@ def TakeCommand():
 
 def GetResponseAndSpeak(query:str):
     Voice = VoiceEngine()
-    Model = AImodel(api_key="AIzaSyDQRGF8n7nrdXCYRBy089w3EfpgIji1B2o")
+    Model = AImodel(api_key="API KEY HERE")
 
     response = Model.generateOutput(question=query)
     print(response)
