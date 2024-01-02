@@ -13,7 +13,7 @@ class main:
         self.page.vertical_alignment = ft.MainAxisAlignment.CENTER
         
         self.Voice = VoiceEngine()
-        self.Model = AImodel("AIzaSyDQRGF8n7nrdXCYRBy089w3EfpgIji1B2o")
+        self.Model = AImodel(api_key="API KEY HERE")
         
         self.text_field = ft.TextField(label="Enter your question!")
         self.submit = ft.ElevatedButton(text="Submit", on_click=self.processInput)
