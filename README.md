@@ -44,5 +44,5 @@ Just enter your own API key from [Google AI Dev](https://ai.google.dev) and ente
 * ~~Making it fully voice accessible~~
 > The Code for speech recognition is fully working in `with_speech.py`
 * Adding Google Gemini Pro Vision
-* Make a `requirements.txt` file for the packages
+* ~~Make a `requirements.txt` file for the packages~~
 * Making the GUI Look better
