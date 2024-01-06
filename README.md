@@ -1,5 +1,5 @@
 # English_8th_GP
-
+[![forthebadge](https://forthebadge.com/images/badges/ages-12.svg)](https://forthebadge.com)
 A School Project made on the basis of newly released AI of **Google Gemini Pro**. This uses Gemini Pro API to get the meaning of the words by Gemini and converting into Speech using the python library
 *`pyttsx3`*. You can ask any questions from Gemini.
 
