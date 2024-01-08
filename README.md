@@ -2,6 +2,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-<COLOR>.svg)](https://shields.io)
 
+[![Generic badge](https://img.shields.io/badge/Licence-MIT<COLOR>.svg)](https://shields.io)
 
 
 
