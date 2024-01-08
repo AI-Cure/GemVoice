@@ -1,11 +1,4 @@
 # English_8th_GP
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![Generic badge](https://img.shields.io/badge/Maintained-Yes-<COLOR>.svg)](https://shields.io)
-
-[![Generic badge](https://img.shields.io/badge/Licence-MIT-<COLOR>.svg)](https://shields.io)
-
-
-
 
 A School Project made on the basis of newly released AI of **Google Gemini Pro**. This uses Gemini Pro API to get the meaning of the words by Gemini and converting into Speech using the python library
 *`pyttsx3`*. You can ask any questions from Gemini.
@@ -48,3 +41,12 @@ After installing the prerequisites follow the below mentioned steps.
 * Adding Google Gemini Pro Vision
 * ~~Make a `requirements.txt` file for the packages~~
 * Making the GUI Look better
+
+# Status 
+![GitHub License](https://img.shields.io/github/license/vid12064/English_8th_GP)
+
+
+![GitHub Repo stars](https://img.shields.io/github/stars/vid12064/English_8th_GP)
+
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
