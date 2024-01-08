@@ -17,12 +17,28 @@ A School Project made on the basis of newly released AI of **Google Gemini Pro**
 * Google Generative AI API key
 * Choose desired model and download that file and use the command `pip install -r requirements.txt`
 
+# Installation Steps
 
-## How to Use?
 
-Just enter your own API key from [Google AI Dev](https://ai.google.dev) and enter it and start using.
+After installing the prerequisites follow the below mentioned steps.
 
-  
+1. Open the terminal and go to the folder in which you have stored the project select from both the versions you like (Gui-based, Speech-based)
+2. Put the Google API key at
+   ###### GUI based
+   > At line number 16 
+    ```
+    self.Model = AImodel(api_key="API KEY HERE") 
+
+    ```
+    ###### Speech Based
+   > At line number 93
+
+   ```
+   Model = AImodel(api_key="API KEY HERE")
+
+   ``` 
+    
+3. Run your code. 
 
 # Future Improvements
 
